@@ -1,0 +1,83 @@
+proxy-providers:
+  Akun_Indonesia:
+    type: file
+    path: "./Akun_Indonesia.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 30
+  Akun_CAMPURAN:
+    type: file
+    path: "./Akun_CAMPURAN.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 30
+proxy-groups:
+- name: All-Server
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - Akun_Indonesia
+  - Akun_CAMPURAN
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: Server-ID
+  type: url-test
+  disable-udp: false
+  use:
+  - Akun_Indonesia
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+  tolerance: '10'
+- name: Server-SG
+  type: url-test
+  disable-udp: false
+  use:
+  - Akun_CAMPURAN
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+  tolerance: '10'
+- name: Pilih-Akun
+  type: select
+  disable-udp: false
+  use:
+  - Akun_Indonesia
+  - Akun_CAMPURAN
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: global
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - 1.0.0.1
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.google/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 112.215.203.254
+rules:
+- MATCH,GLOBAL
