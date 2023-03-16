@@ -2,17 +2,3 @@ proxies:
 #All Format Akun Clash Silahkan Akses Link Berikut: https://github.com/GboyGud/FORMAT_AKUN_CLASH
 #Ada Pertanyaan Seputar Config? Silahkan Hubungi: wa.me/6285875556123
 #Mulai Baris Ini Kebawah Isi Dengan Akun Anda Sendiri
-
-- name: TrojanId-WS
-  server: bug
-  port: 443
-  type: trojan
-  password: fac80540-4474-11ed-b3b1-1239d0255272
-  network: ws
-  sni: host
-  skip-cert-verify: true
-  udp: true
-  ws-opts:
-    path: /path
-    headers:
-        Host: host 
