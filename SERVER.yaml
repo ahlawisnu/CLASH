@@ -1,4 +1,53 @@
 proxies:
-#All Format Akun Clash Silahkan Akses Link Berikut: https://github.com/GboyGud/FORMAT_AKUN_CLASH
-#Ada Pertanyaan Seputar Config? Silahkan Hubungi: wa.me/6285875556123
-#Mulai Baris Ini Kebawah Isi Dengan Akun Anda Sendiri
+  - name: www.skillacademy.com
+    server: www.skillacademy.com
+    port: 443
+    type: trojan
+    password: e4b41380-c420-11ed-ae97-1239d0255272
+    skip-cert-verify: true
+    sni: th1-trojan.bonds.id
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: th1-trojan.bonds.id
+    udp: true
+  - name: www.skillacademy.com 2
+    server: www.skillacademy.com
+    port: 443
+    type: trojan
+    password: 02a192f0-c421-11ed-9b03-1239d0255272
+    skip-cert-verify: true
+    sni: sg6-trojan.bonds.id
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: sg6-trojan.bonds.id
+    udp: true
+  - name: www.skillacademy.com 3
+    server: www.skillacademy.com
+    port: 443
+    type: trojan
+    password: 1602d420-c421-11ed-8ae3-1239d0255272
+    skip-cert-verify: true
+    sni: id-1.test3.net
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: id-1.test3.net
+    udp: true
+  - name: www.skillacademy.com 4
+    server: www.skillacademy.com
+    port: 443
+    type: trojan
+    password: 315feec0-c421-11ed-a6a4-1239d0255272
+    skip-cert-verify: true
+    sni: sg-2.test3.net
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: sg-2.test3.net
+    udp: true
