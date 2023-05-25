@@ -1,53 +1,30 @@
 proxies:
-  - name: www.skillacademy.com
-    server: www.skillacademy.com
+  - name: opentunnel.net-arbvko
+    server: sogood.linefriends.com
     port: 443
-    type: trojan
-    password: e4b41380-c420-11ed-ae97-1239d0255272
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    tls: true
     skip-cert-verify: true
-    sni: th1-trojan.bonds.id
+    servername: idv-3.openv2ray.com
     network: ws
     ws-opts:
-      path: /howdy
+      path: /opentunnel?user=opentunnel.net-arbvko
       headers:
-        Host: th1-trojan.bonds.id
+        Host: idv-3.openv2ray.com
     udp: true
-  - name: www.skillacademy.com 2
-    server: www.skillacademy.com
+  - name: sogood.linefriends.com
+    server: sogood.linefriends.com
     port: 443
     type: trojan
-    password: 02a192f0-c421-11ed-9b03-1239d0255272
+    password: 82d52310-fb1b-11ed-9f09-1239d0255272
     skip-cert-verify: true
-    sni: sg6-trojan.bonds.id
+    sni: sg3-trojan.bonds.id
     network: ws
     ws-opts:
       path: /howdy
       headers:
-        Host: sg6-trojan.bonds.id
-    udp: true
-  - name: www.skillacademy.com 3
-    server: www.skillacademy.com
-    port: 443
-    type: trojan
-    password: 1602d420-c421-11ed-8ae3-1239d0255272
-    skip-cert-verify: true
-    sni: id-1.test3.net
-    network: ws
-    ws-opts:
-      path: /howdy
-      headers:
-        Host: id-1.test3.net
-    udp: true
-  - name: www.skillacademy.com 4
-    server: www.skillacademy.com
-    port: 443
-    type: trojan
-    password: 315feec0-c421-11ed-a6a4-1239d0255272
-    skip-cert-verify: true
-    sni: sg-2.test3.net
-    network: ws
-    ws-opts:
-      path: /howdy
-      headers:
-        Host: sg-2.test3.net
+        Host: sg3-trojan.bonds.id
     udp: true
