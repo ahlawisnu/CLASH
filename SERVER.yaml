@@ -28,3 +28,19 @@ proxies:
       headers:
         Host: sg3-trojan.bonds.id
     udp: true
+  - name: HTTP Injector
+    server: sogood.linefriends.com
+    port: 80
+    type: vmess
+    uuid: f9e114d0-b5d5-46a7-91cb-310367cadfd8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id-gcloud4.estebuh.my.id
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id-gcloud4.estebuh.my.id
+    udp: true
