@@ -11,7 +11,7 @@ proxies:
     servername: idv-3.openv2ray.com
     network: ws
     ws-opts:
-      path: /opentunnel?user=opentunnel.net-arbvko
+      path: /u/opentunnel.net-arbvko
       headers:
         Host: idv-3.openv2ray.com
     udp: true
