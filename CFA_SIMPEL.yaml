@@ -1,7 +1,8 @@
 proxy-providers:
   SERVER:
     type: http
-    url: https://github.com/ahlawisnu/CLASH/raw/main/SERVER.yaml
+    url: https:/
+    behavior: domain
     path: "./Proxy/SERVER.yaml"
     health-check:
       enable: true
@@ -16,16 +17,8 @@ proxy-groups:
   - SERVER
   url: http://www.gstatic.com/generate_204
   interval: '10'
-- name: Server-ID
+- name: BEST PING
   type: url-test
-  disable-udp: false
-  use:
-  - SERVER
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
-  tolerance: '10'
-- name: Otomatis
-  type: fallback
   disable-udp: false
   use:
   - SERVER
