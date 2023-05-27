@@ -1,7 +1,7 @@
 proxy-providers:
   SERVER:
     type: http
-    url: https:/
+    url: #####
     behavior: domain
     path: "./Proxy/SERVER.yaml"
     health-check:
