@@ -1,0 +1,27 @@
+proxies:
+  - name: www.skillacademy.com
+    server: www.skillacademy.com
+    port: 443
+    type: trojan
+    password: 6c493450-fc7b-11ed-b803-1239d0255272
+    skip-cert-verify: true
+    sni: id-1.test3.net
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: id-1.test3.net
+    udp: true
+  - name: www.skillacademy.com 2
+    server: www.skillacademy.com
+    port: 443
+    type: trojan
+    password: 52da0f80-fc7b-11ed-b2b5-1239d0255272
+    skip-cert-verify: true
+    sni: id-1.test3.net
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: id-1.test3.net
+    udp: true
