@@ -7,18 +7,6 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 30
 proxy-groups:
-- name: Universal
-  type: select
-  disable-udp: false
-  proxies:
-  - REJECT
-  - DIRECT
-  - Url-Test
-  - Multi-Akun
-  - FALLBACK
-  - Pilih-Akun
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
 - name: 18+
   type: select
   disable-udp: false
@@ -26,6 +14,7 @@ proxy-groups:
   - DIRECT
   - REJECT
   - Url-Test
+  - Multi-Akun
   url: http://www.gstatic.com/generate_204
   interval: '10'
 - name: Adblock
@@ -206,7 +195,7 @@ rule-providers:
   rule_adblock2:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
-    behavior: classical
+    behavior: domain
     path: ./rule_provider/adblock2.yaml
   rule_18+:
     type: http
