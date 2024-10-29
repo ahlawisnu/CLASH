@@ -207,7 +207,6 @@ rule-providers:
     url: http://127.0.0.1:9090/18+.yaml
     behavior: classical
     path: ./rule_provider/18+.yaml
-tproxy-port: 7895
 tun:
   enable: true
   dns-hijack:
