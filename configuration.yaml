@@ -1,7 +1,7 @@
 proxy-providers:
   SERVER:
     type: http
-    url: http://127.0.0.1:9090/akun.yaml
+    url: http://localhost/akun.yaml
     path: ./proxy_provider/akun.yaml
     health-check:
       enable: true
@@ -196,17 +196,23 @@ dns:
 rules:
 - RULE-SET,rule_18+,18+
 - RULE-SET,rule_adblock,Adblock
+- RULE-SET,rule_adblock2,Adblock
 - MATCH,GLOBAL
 rule-providers:
   rule_adblock:
     type: http
-    url: http://127.0.0.1:9090/adblock.yaml
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
     behavior: classical
     path: ./rule_provider/adblock.yaml
+  rule_adblock2:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
+    behavior: classical
+    path: ./rule_provider/adblock2.yaml
   rule_18+:
     type: http
-    url: http://127.0.0.1:9090/18+.yaml
-    behavior: classical
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18%2B.yaml
+    behavior: domain
     path: ./rule_provider/18+.yaml
 tun:
   enable: true
