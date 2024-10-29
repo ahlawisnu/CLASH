@@ -1,6 +1,7 @@
 proxy-providers:
   SERVER:
-    type: http://127.0.0.1:9090/akun.yaml
+    type: http
+    url: http://127.0.0.1:9090/akun.yaml
     path: ./proxy_provider/akun.yaml
     health-check:
       enable: true
@@ -202,7 +203,7 @@ rule-providers:
     url: http://127.0.0.1:9090/adblock.yaml
     behavior: classical
     path: ./rule_provider/adblock.yaml
-    rule_18+:
+  rule_18+:
     type: http
     url: http://127.0.0.1:9090/18+.yaml
     behavior: classical
