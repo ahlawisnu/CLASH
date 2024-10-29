@@ -1,23 +1,77 @@
 proxy-providers:
   SERVER:
-    type: http
-    url: #####
-    behavior: domain
-    path: "./SERVER.yaml"
+    type: file
+    path: "./proxy/akun.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 30
 proxy-groups:
-- name: All-Server
-  type: load-balance
-  strategy: round-robin
+- name: Universal
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - DIRECT
+  - Url-Test
+  - Multi-Akun
+  - Fallback
+  - Pilih-Akun
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: Stream & Sosmed
+  type: select
+  disable-udp: false
+  proxies:
+  - Url-Test
+  - Multi-Akun
+  - Pilih-Akun
+  - Fallback
+- name: Gaming
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - Pilih-Akun
+  - Url-Test
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: Whatsapp
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - Url-Test
+  - Multi-Akun
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: 18+
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - REJECT
+  - Url-Test
+  - Multi-Akun
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: Adblock
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - DIRECT
+  - Url-Test
+  - Multi-Akun
+  - Pilih-Akun
+- name: Fallback
+  type: fallback
   disable-udp: false
   use:
   - SERVER
   url: http://www.gstatic.com/generate_204
   interval: '10'
-- name: BEST PING
+- name: Url-Test
   type: url-test
   disable-udp: false
   use:
@@ -25,6 +79,14 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: '10'
   tolerance: '10'
+- name: Multi-Akun
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - SERVER
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
 - name: Pilih-Akun
   type: select
   disable-udp: false
@@ -38,7 +100,7 @@ redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7895
 ipv6: false
-mode: global
+mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
@@ -65,4 +127,83 @@ dns:
     - 8.8.8.8
     - 112.215.203.254
 rules:
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- RULE-SET,rule_direct,DIRECT
+- RULE-SET,rule_reject,18+
+- RULE-SET,rule_browsing,Universal
+- RULE-SET,rule_streaming,Stream & Sosmed
+- RULE-SET,rule_sosmed,Stream & Sosmed
+- RULE-SET,rule_ML,Gaming
+- RULE-SET,rule_PUBG,Gaming
+- RULE-SET,rule_FF,Gaming
+- RULE-SET,rule_gameumum,Gaming
+- RULE-SET,rule_whatsapp,Whatsapp
+- RULE-SET,rule_adblock,Adblock
 - MATCH,GLOBAL
+rule-providers:
+  rule_direct:
+    type: http
+    behavior: classical
+    path: "./rule/direct.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/direct.yaml
+    interval: 86400
+  rule_reject:
+    type: http
+    behavior: classical
+    path: "./rule/reject.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/reject.yaml
+    interval: 86400
+  rule_browsing:
+    type: http
+    behavior: classical
+    path: "./rule/browsing.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/browsing.yaml
+    interval: 86400
+  rule_streaming:
+    type: http
+    behavior: classical
+    path: "./rule/streaming.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/streaming.yaml
+    interval: 86400
+  rule_sosmed:
+    type: http
+    behavior: classical
+    path: "./rule/sosmed.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/sosmed.yaml
+    interval: 86400
+  rule_ML:
+    type: http
+    behavior: classical
+    path: "./rule/ML.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/ML.yaml
+    interval: 86400
+  rule_PUBG:
+    type: http
+    behavior: classical
+    path: "./rule/PUBG.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/PUBG.yaml
+    interval: 86400
+  rule_FF:
+    type: http
+    behavior: classical
+    path: "./rule/FF.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/FF.yaml
+    interval: 86400
+  rule_gameumum:
+    type: http
+    behavior: classical
+    path: "./rule/gameumum.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/gameumum.yaml
+    interval: 86400
+  rule_whatsapp:
+    type: http
+    behavior: classical
+    path: "./rule/whatsapp.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/whatsapp.yaml
+    interval: 86400
+  rule_adblock:
+    type: http
+    behavior: classical
+    path: "./rule/adblock.yaml"
+    url: https://github.com/ahlawisnu/CLASHV2/raw/main/adblock.yaml
+    interval: 86400
