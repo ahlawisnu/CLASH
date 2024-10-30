@@ -4,6 +4,8 @@ payload:
 # GRUP TELE: https://t.me/MahaVPN_Group
 
 # > HOWDY FASTSSH
+  - DOMAIN-SUFFIX,analytics.google.com
+  - DOMAIN-SUFFIX,ssl.google-analytics.com
   - DOMAIN-SUFFIX,ads.google.com
   - DOMAIN-SUFFIX,adservice.google.com
   - DOMAIN-SUFFIX,googleadservices.com
@@ -16,6 +18,9 @@ payload:
 
 # > Media.net
   - DOMAIN-SUFFIX,media.net
+  - DOMAIN-SUFFIX,pixel.facebook.com
+  - DOMAIN-SUFFIX,events.reddit.com
+  - DOMAIN-SUFFIX,fwtracks.freshmarketer.com
 
 # > FastClick
   - DOMAIN-SUFFIX,fastclick.com
