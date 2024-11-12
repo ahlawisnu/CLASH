@@ -9,3 +9,5 @@ hanya ada rule adblock & 🔞
 ada Auto pilih akun, Best ping, load balance, dan fallback
 
 follow <a href="https://instagram.com/ahladigital.ai" > ➤ 𝐈𝐆 @𝐚𝐡𝐥𝐚𝐥𝐢𝐠𝐢𝐭𝐚𝐥.𝐚𝐢 ✸</a>
+
+saran pilih : <div style ="font-size:30px;">Configurations.yaml</div> jangan yg config.yaml
