@@ -1,29 +1,25 @@
+# di buat oleh ➤ 𝐈𝐆 @𝐚𝐡𝐥𝐚𝐥𝐢𝐠𝐢𝐭𝐚𝐥.𝐚𝐢 ✸ 
+# NB: Setelah semua file terunduh, pastikan semua type http ubah menjadi file, atau biarkan apa adanya, tapi khusus proxy provider wajib ganti untuk menghindari Update otomatis pada link URL nya. 
+# hanya ada rule adblock dan rule 18+ (family safe) 
 proxy-providers:
   SERVER:
-    type: file
+    type: http # setelah file di download semua kemudian edit type http ubah jadi file. lalu hapus url beserta linknya
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/akun.yaml
     path: "./akun.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 30
 proxy-groups:
-- name: 18+
+- name: ADS + 🔞
   type: select
   disable-udp: false
   proxies:
   - DIRECT
   - REJECT
   - Url-Test
-  - Multi-Akun
   url: http://www.gstatic.com/generate_204
   interval: '10'
-- name: Adblock
-  type: select
-  disable-udp: false
-  proxies:
-  - REJECT
-  - DIRECT
-  - Url-Test
 - name: FALLBACK
   type: fallback
   disable-udp: false
@@ -181,12 +177,14 @@ dns:
     - "*.ffxiv.com"
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
-rules:
-- RULE-SET,rule_18+,18+
-- RULE-SET,rule_adblock,Adblock
-- RULE-SET,rule_adblock2,Adblock
+rules: 
+- RULE-SET,rule_18+,ADS + 🔞
+- RULE-SET,rule_haran,ADS + 🔞
+- RULE-SET,rule_adblock,ADS + 🔞
+- RULE-SET,rule_adblock2,ADS + 🔞
 - MATCH,GLOBAL
 rule-providers:
+ # setelah semua file selesai di download ganti type http menjadi file dan hapus url beserta linknya lalu save. 
   rule_adblock:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
@@ -202,6 +200,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
     behavior: domain
     path: ./rule_provider/18+.yaml
+    rule_haram:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
+    behavior: domain
+    path: ./rule_provider/haram.yaml
 tun:
   enable: true
   dns-hijack:
