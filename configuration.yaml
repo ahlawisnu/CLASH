@@ -176,7 +176,7 @@ dns:
     - +.media.dssott.com
 rules: 
 - RULE-SET,rule_18+,ADS + 🔞
-- RULE-SET,rule_haran,ADS + 🔞
+- RULE-SET,rule_haram,ADS + 🔞
 - RULE-SET,rule_adblock,ADS + 🔞
 - RULE-SET,rule_adblock2,ADS + 🔞
 - MATCH,GLOBAL
@@ -196,7 +196,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
     behavior: domain
     path: ./rule_provider/18+.yaml
-    rule_haram:
+  rule_haram:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
     behavior: domain
