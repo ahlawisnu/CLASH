@@ -1,9 +1,6 @@
-# di buat oleh ➤ 𝐈𝐆 @𝐚𝐡𝐥𝐚𝐥𝐢𝐠𝐢𝐭𝐚𝐥.𝐚𝐢 ✸ 
-# NB: Setelah semua file terunduh, pastikan semua type http ubah menjadi file, atau biarkan apa adanya, tapi khusus proxy provider wajib ganti untuk menghindari Update otomatis pada link URL nya. 
-# hanya ada rule adblock dan rule 18+ (family safe) 
 proxy-providers:
   SERVER:
-    type: http # setelah file di download semua kemudian edit type http ubah jadi file. lalu hapus url beserta linknya
+    type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/akun.yaml
     path: "./akun.yaml"
     health-check:
@@ -184,7 +181,6 @@ rules:
 - RULE-SET,rule_adblock2,ADS + 🔞
 - MATCH,GLOBAL
 rule-providers:
- # setelah semua file selesai di download ganti type http menjadi file dan hapus url beserta linknya lalu save. 
   rule_adblock:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
