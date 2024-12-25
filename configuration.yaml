@@ -191,7 +191,7 @@ rule-providers:
     path: ./rule_provider/adblock2.yaml
   rule_18+:
     type: http
-    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
     behavior: domain
     path: ./rule_provider/18+.yaml
 tun:
