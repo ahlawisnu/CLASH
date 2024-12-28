@@ -1,8 +1,4 @@
 payload:
-# AUTHOR: GoodboyXMahaVPN
-# TEEGRAM: https://t.me/AfthonPc
-# GRUP TELE: https://t.me/MahaVPN_Group
-
 # > HOWDY FASTSSH
   - DOMAIN-SUFFIX,analytics.google.com
   - DOMAIN-SUFFIX,ssl.google-analytics.com
@@ -39,6 +35,9 @@ payload:
 
 # > # > Analytics ====================
 # > Yahoo
+  - DOMAIN-SUFFIX,adtech.yahooinc.com
+  - DOMAIN-SUFFIX,udcm.yahoo.com
+  - DOMAIN-SUFFIX,udc.yahoo.com 
   - DOMAIN-SUFFIX,ads.yahoo.com
   - DOMAIN-SUFFIX,adserver.yahoo.com
   - DOMAIN-SUFFIX,adspecs.yahoo.com
@@ -218,10 +217,6 @@ payload:
   - DOMAIN-SUFFIX,events3alt.adcolony.com
   - DOMAIN-SUFFIX,adc3-launch.adcolony.com
   - DOMAIN-SUFFIX,ads30.adcolony.com
-# >  Yahoo
-  - DOMAIN-SUFFIX,adtech.yahooinc.com
-  - DOMAIN-SUFFIX,udcm.yahoo.com
-  - DOMAIN-SUFFIX,udc.yahoo.com
 # UNITY
   - DOMAIN-SUFFIX,adserver.unityads.unity3d.com
   - DOMAIN-SUFFIX,config.unityads.unity3d.com
