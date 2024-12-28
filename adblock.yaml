@@ -24,6 +24,7 @@ payload:
   - DOMAIN-SUFFIX,fastclick.net
 
 # > Amazon
+  - DOMAIN-SUFFIX,analytics.s3.amazonaws.com
   - DOMAIN-SUFFIX,adtago.s3.amazonaws.com
   - DOMAIN-SUFFIX,analyticsengine.s3.amazonaws.com
   - DOMAIN-SUFFIX,advice-ads.s3.amazonaws.com
@@ -264,6 +265,7 @@ payload:
   - DOMAIN-SUFFIX,open.oneplus.net
 
 # > Huawei
+  - DOMAIN-SUFFIX,grs.hicloud.com
   - DOMAIN-SUFFIX,metrics.data.hicloud.com
   - DOMAIN-SUFFIX,metrics1.data.hicloud.com
   - DOMAIN-SUFFIX,metrics2.data.hicloud.com
@@ -287,6 +289,10 @@ payload:
   - DOMAIN-SUFFIX,analytics-api.samsunghealthcn.com
 
 # > Apple
+  - DOMAIN-SUFFIX,notes-analytics-events.apple.com
+  - DOMAIN-SUFFIX,weather-analytics-events.apple.com
+  - DOMAIN-SUFFIX,api-adservices.apple.com
+  - DOMAIN-SUFFIX,iadsdk.apple.com
   - DOMAIN-SUFFIX,metrics.apple.com
   - DOMAIN-SUFFIX,securemetrics.apple.com
   - DOMAIN-SUFFIX,supportmetrics.apple.com
