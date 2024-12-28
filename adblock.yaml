@@ -13,6 +13,7 @@ payload:
   - DOMAIN-SUFFIX,pagead2.googlesyndication.com
   - DOMAIN-SUFFIX,googlesyndication.com
   - DOMAIN-SUFFIX,g.doubleclick.net
+  - DOMAIN-SUFFIX,click.googleanalytics.com
   - DOMAIN-SUFFIX,google-analytics.com
   - DOMAIN-SUFFIX,doubleclick.net
 
@@ -166,7 +167,11 @@ payload:
   - DOMAIN-SUFFIX,app.getsentry.com
 
 # > # > Social ====================
-
+# > TIKTOK
+  - DOMAIN-SUFFIX,log.byteoversea.com
+  - DOMAIN-SUFFIX,business-api.tiktok.com
+  - DOMAIN-SUFFIX,ads-api.tiktok.com
+  
 # > Facebook
   - DOMAIN-SUFFIX,pixel.facebook.com
   - DOMAIN-SUFFIX,analytics.facebook.com
@@ -209,12 +214,26 @@ payload:
   - DOMAIN-SUFFIX,fonts.googleapis.com 
 
 # > # > Mix ====================
+  - DOMAIN-SUFFIX,wd.adcolony.com
+  - DOMAIN-SUFFIX,events3alt.adcolony.com
+  - DOMAIN-SUFFIX,adc3-launch.adcolony.com
+  - DOMAIN-SUFFIX,ads30.adcolony.com
 # >  Yahoo
-
+  - DOMAIN-SUFFIX,adtech.yahooinc.com
+  - DOMAIN-SUFFIX,udcm.yahoo.com
+  - DOMAIN-SUFFIX,udc.yahoo.com
+# UNITY
+  - DOMAIN-SUFFIX,adserver.unityads.unity3d.com
+  - DOMAIN-SUFFIX,config.unityads.unity3d.com
+  - DOMAIN-SUFFIX,webview.unityads.unity3d.com
+  - DOMAIN-SUFFIX,auction.unityads.unity3d.com
 # >  Yandex
-
+  - DOMAIN-SUFFIX,adfstat.yandex.ru
+  - DOMAIN-SUFFIX,appmetrica.yandex.ru
 # > # > OEM ====================
-
+  - DOMAIN-SUFFIX,bdapi-ads.realmemobile.com
+  - DOMAIN-SUFFIX,iot-logser.realme.com
+  - DOMAIN-SUFFIX,iot-eu-logser.realme.com
 # > Realme
   - DOMAIN-SUFFIX,bdapi-in-ads.realmemobile.com
 
