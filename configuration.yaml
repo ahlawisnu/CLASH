@@ -177,9 +177,9 @@ dns:
     - +.media.dssott.com
 rules: 
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-- RULE-SET,rule_18+,ADBLOCK+
-- RULE-SET,rule_adblock,ADBLOCK+
-- RULE-SET,rule_adblock2,ADBLOCK+
+- RULE-SET,rule_18+,ADBLOCK PLUS
+- RULE-SET,rule_adblock,Adblock PLUS
+- RULE-SET,rule_adblock2,ADBLOCK PLUS
 - MATCH,GLOBAL
 rule-providers:
   rule_adblock:
