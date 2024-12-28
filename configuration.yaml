@@ -179,7 +179,7 @@ rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - RULE-SET,rule_18+,ADBLOCK PLUS
 - RULE-SET,rule_adblock,ADBLOCK PLUS
-- RULE-SET,rule_adblock2,ADBLOCK PLUS
+- RULE-SET,rule_haram,ADBLOCK PLUS
 - MATCH,GLOBAL
 rule-providers:
   rule_adblock:
@@ -187,11 +187,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
     behavior: classical
     path: ./rule_provider/adblock.yaml
-  rule_adblock2:
+  rule_haram:
     type: http
-    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock2.yaml
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/haram.yaml
     behavior: domain
-    path: ./rule_provider/adblock2.yaml
+    path: ./rule_provider/haram.yaml
   rule_18+:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
