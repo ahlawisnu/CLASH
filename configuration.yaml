@@ -1,5 +1,6 @@
 proxy-providers:
   SERVER:
+  # Ganti type http menjadi filed an hapus url & link nya
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/akun.yaml
     path: "./akun.yaml"
@@ -8,7 +9,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 30
 proxy-groups:
-- name: ADBLOCK+
+- name: ADBLOCK PLUS
   type: select
   disable-udp: false
   proxies:
@@ -56,7 +57,7 @@ mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: ""
+secret: "123456"
 bind-address: "*"
 unified-delay: true
 profile:
@@ -69,16 +70,17 @@ dns:
   enhanced-mode: fake-ip
   listen: 0.0.0.0:7874
   nameserver:
-    - 8.8.8.8
-    - 1.0.0.1
-    - https://dns.google/dns-query
+    - 94.140.14.140
+    - 94.140.14.141
+    - https://unfiltered.adguard-dns.com/dns-query
   fallback:
     - 1.1.1.1
     - 8.8.4.4
     - https://cloudflare-dns.com/dns-query
   default-nameserver:
+    - 9.9.9.9
     - 8.8.8.8
-    - 1.1.1.1
+    # Config Untuk CLASH mode Fake IP
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - "*.lan"
@@ -174,6 +176,7 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 rules: 
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - RULE-SET,rule_18+,ADBLOCK+
 - RULE-SET,rule_adblock,ADBLOCK+
 - RULE-SET,rule_adblock2,ADBLOCK+
