@@ -74,12 +74,12 @@ dns:
     - 94.140.14.141
     - https://unfiltered.adguard-dns.com/dns-query
   fallback:
-    - 1.1.1.1
-    - 8.8.4.4
     - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
   default-nameserver:
     - 9.9.9.9
     - 8.8.8.8
+    - 1.1.1.1
     # Config Untuk CLASH mode Fake IP
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
