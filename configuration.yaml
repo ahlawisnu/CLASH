@@ -9,7 +9,15 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 30
 proxy-groups:
-- name: ADBLOCK PLUS
+- name: UMUM
+  type: select
+  proxies:
+  - DIRECT 
+  - FALLBACK
+  - BEST-PING
+  - LB
+  - MANUAL
+- name: ADBLOCK+
   type: select
   disable-udp: false
   proxies:
@@ -24,7 +32,7 @@ proxy-groups:
   - SERVER
   url: http://www.gstatic.com/generate_204
   interval: '10'
-- name: Url-Test
+- name: BEST-PING
   type: url-test
   disable-udp: false
   use:
@@ -32,7 +40,7 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: '10'
   tolerance: '10'
-- name: Multi-Akun
+- name: LB
   type: load-balance
   strategy: round-robin
   disable-udp: false
@@ -40,7 +48,7 @@ proxy-groups:
   - SERVER
   url: http://www.gstatic.com/generate_204
   interval: '10'
-- name: Pilih-Akun
+- name: MANUAL
   type: select
   disable-udp: false
   use:
@@ -175,12 +183,7 @@ dns:
     - "*.ffxiv.com"
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
-rules: 
-- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-- RULE-SET,rule_18+,ADBLOCK PLUS
-- RULE-SET,rule_adblock,ADBLOCK PLUS
-- RULE-SET,rule_haram,ADBLOCK PLUS
-- MATCH,GLOBAL
+    # RULE
 rule-providers:
   rule_adblock:
     type: http
@@ -201,3 +204,8 @@ tun:
   enable: true
   dns-hijack:
     - any:53
+rules: 
+- RULE-SET,rule_18+,ADBLOCK+
+- RULE-SET,rule_adblock,ADBLOCK+
+- RULE-SET,rule_haram,ADBLOCK+
+- MATCH,UMUM
