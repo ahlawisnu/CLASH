@@ -1,60 +1,56 @@
 proxy-providers:
   SERVER:
-  # Ganti type http menjadi filed an hapus url & link nya
-    type: http
-    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/akun.yaml
+    type: file
     path: "./akun.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 30
+      interval: 300
+
 proxy-groups:
-- name: UMUM
-  type: select
-  proxies:
-  - DIRECT 
-  - FALLBACK
-  - BEST-PING
-  - LB
-  - MANUAL
-- name: ADBLOCK+
-  type: select
-  disable-udp: false
-  proxies:
-  - REJECT
-  - FALLBACK
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
-- name: FALLBACK
-  type: fallback
-  disable-udp: false
-  use:
-  - SERVER
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
-- name: BEST-PING
-  type: url-test
-  disable-udp: false
-  use:
-  - SERVER
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
-  tolerance: '10'
-- name: LB
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  use:
-  - SERVER
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
-- name: MANUAL
-  type: select
-  disable-udp: false
-  use:
-  - SERVER
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
+  - name: UMUM
+    type: select
+    proxies:
+      - DIRECT
+      - FALLBACK
+      - BEST-PING
+      - LB
+      - MANUAL
+
+  - name: ADBLOCK+
+    type: select
+    proxies:
+      - REJECT
+      - FALLBACK
+
+  - name: FALLBACK
+    type: fallback
+    use:
+      - SERVER
+    url: http://www.gstatic.com/generate_204
+    interval:300
+
+  - name: BEST-PING
+    type: url-test
+    use:
+      - SERVER
+    url: http://www.gstatic.com/generate_204
+    interval:300
+    tolerance:300
+
+  - name: LB
+    type: load-balance
+    strategy: round-robin
+    use:
+      - SERVER
+    url: http://www.gstatic.com/generate_204
+    interval:300
+
+  - name: MANUAL
+    type: select
+    use:
+      - SERVER
+
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -68,9 +64,11 @@ external-controller: 0.0.0.0:9090
 secret: "123456"
 bind-address: "*"
 unified-delay: true
+
 profile:
   store-selected: true
   store-fake-ip: true
+
 dns:
   enable: true
   ipv6: false
@@ -88,7 +86,6 @@ dns:
     - 9.9.9.9
     - 8.8.8.8
     - 1.1.1.1
-    # Config Untuk CLASH mode Fake IP
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - "*.lan"
@@ -183,29 +180,33 @@ dns:
     - "*.ffxiv.com"
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
-    # RULE
+
 rule-providers:
   rule_adblock:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
     behavior: classical
     path: ./rule_provider/adblock.yaml
+
   rule_haram:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/haram.yaml
     behavior: domain
     path: ./rule_provider/haram.yaml
+
   rule_18+:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
     behavior: domain
     path: ./rule_provider/18+.yaml
+
 tun:
   enable: true
   dns-hijack:
     - any:53
-rules: 
-- RULE-SET,rule_18+,ADBLOCK+
-- RULE-SET,rule_adblock,ADBLOCK+
-- RULE-SET,rule_haram,ADBLOCK+
-- MATCH,UMUM
+
+rules:
+  - RULE-SET,rule_18+,ADBLOCK+
+  - RULE-SET,rule_adblock,ADBLOCK+
+  - RULE-SET,rule_haram,ADBLOCK+
+  - MATCH,UMUM
