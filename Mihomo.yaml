@@ -28,7 +28,7 @@ proxy-groups:
     use:
       - SERVER
     url: http://www.gstatic.com/generate_204
-    interval:300
+    interval: 300
 
   - name: BEST-PING
     type: url-test
@@ -36,7 +36,7 @@ proxy-groups:
       - SERVER
     url: http://www.gstatic.com/generate_204
     interval:300
-    tolerance:300
+    tolerance: 300
 
   - name: LB
     type: load-balance
@@ -44,7 +44,7 @@ proxy-groups:
     use:
       - SERVER
     url: http://www.gstatic.com/generate_204
-    interval:300
+    interval: 300
 
   - name: MANUAL
     type: select
