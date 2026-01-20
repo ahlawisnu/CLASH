@@ -1,6 +1,7 @@
 proxy-providers:
   SERVER:
-    type: file
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/akun.yaml
     path: "./akun.yaml"
     health-check:
       enable: true
