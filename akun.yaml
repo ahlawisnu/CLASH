@@ -1,2 +1,76 @@
-# masukan akunmu ke bawah 👇 
 proxies:
+  - name: "[www.v2nodes.com] V2Ray Vless-SG-2535"
+    server: 104.17.3.81
+    port: 443
+    type: vless
+    uuid: fa335d1c-e6d1-48bb-99a3-f06710a29043
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: afrcloud22.mmv.kr
+    network: ws
+    ws-opts:
+      path: /130.185.164.213=8443
+      headers:
+        Host: afrcloud22.mmv.kr
+    udp: true
+  - name: "[www.v2nodes.com] V2Ray Vless-SG-2775"
+    server: www.udemy.com
+    port: 2096
+    type: vless
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sni.jpmj.dev
+    network: ws
+    ws-opts:
+      path: /?ed=2560&Telegram🇨🇳@WangCai2
+      headers:
+        Host: sni.jpmj.dev
+    udp: true
+  - name: "[www.v2nodes.com] V2Ray Vless-SG-2776"
+    server: www.udemy.com
+    port: 443
+    type: vless
+    uuid: aaaaaabb-4ddd-4eee-9fff-ffffffffffff
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ProxyVPN11.afrcloud22.mmv.kr
+    network: ws
+    ws-opts:
+      path: /156.244.1.250=8443
+      headers:
+        Host: ProxyVPN11.afrcloud22.mmv.kr
+    udp: true
+  - name: "[www.v2nodes.com] V2Ray Vless-SG-5033"
+    server: www.udemy.com
+    port: 2096
+    type: vless
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sni.jpmj.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.jpmj.dev
+    udp: true
+  - name: "[www.v2nodes.com] vless-"
+    server: www.udemy.com
+    port: 443
+    type: vless
+    uuid: 3321a819-889d-40b3-b8fa-f34208827ef1
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: o00o.snip.qzz.io
+    network: ws
+    ws-opts:
+      path: /Tel-@V2rayAlpha
+      headers:
+        Host: o00o.snip.qzz.io
+    udp: true
