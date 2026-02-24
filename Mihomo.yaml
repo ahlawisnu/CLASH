@@ -9,15 +9,6 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - name: UMUM
-    type: select
-    proxies:
-      - DIRECT
-      - FALLBACK
-      - BEST-PING
-      - LB
-      - MANUAL
-
   - name: ADBLOCK+
     type: select
     proxies:
@@ -37,7 +28,7 @@ proxy-groups:
       - SERVER
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 300
+    tolerance: 100
 
   - name: LB
     type: load-balance
@@ -46,12 +37,30 @@ proxy-groups:
       - SERVER
     url: http://www.gstatic.com/generate_204
     interval: 300
-
-  - name: MANUAL
+    
+  - name: Manual
     type: select
+    proxies:
+      - BEST-PING
+      - FALLBACK
+      - LB
     use:
       - SERVER
-
+    
+  - name: GLOBAL
+    type: select
+    proxies:
+      - Manual
+      - BEST-PING
+      - FALLBACK
+      - LB
+    use: SERVER
+    
+  - name: Final
+    type: select
+    proxies:
+      - GLOBAL
+      - DIRECT
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -62,7 +71,7 @@ mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: "123456"
+secret: "hu9ouytyuuyyip87"
 bind-address: "*"
 unified-delay: true
 
@@ -210,4 +219,4 @@ rules:
   - RULE-SET,rule_18+,ADBLOCK+
   - RULE-SET,rule_adblock,ADBLOCK+
   - RULE-SET,rule_haram,ADBLOCK+
-  - MATCH,UMUM
+  - MATCH,Final
