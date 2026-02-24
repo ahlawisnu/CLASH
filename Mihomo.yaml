@@ -54,7 +54,8 @@ proxy-groups:
       - BEST-PING
       - FALLBACK
       - LB
-    use: SERVER
+    use:
+      - SERVER
     
   - name: Final
     type: select
