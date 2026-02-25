@@ -66,7 +66,7 @@ proxy-groups:
 port: 7890
 socks-port: 7891
 redir-port: 7892
-mixed-port: 7893
+mixed-port: 7890
 tproxy-port: 7895
 ipv6: false
 mode: rule
