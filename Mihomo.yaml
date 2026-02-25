@@ -43,10 +43,11 @@ proxy-groups:
       - BEST-PING
       - FALLBACK
       - LB
+      - DIRECT
     use:
       - SERVER
     
-  - name: GLOBAL
+  - name: UMUM
     type: select
     proxies:
       - MANUAL
@@ -59,7 +60,7 @@ proxy-groups:
   - name: FINAL
     type: select
     proxies:
-      - GLOBAL
+      - UMUM
       - DIRECT
 
 port: 7890
@@ -72,7 +73,7 @@ mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: "hu9ouytyuuyyip87"
+secret: "123456"
 bind-address: "*"
 unified-delay: true
 
