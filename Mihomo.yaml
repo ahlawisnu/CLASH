@@ -193,6 +193,30 @@ dns:
     - +.media.dssott.com
 
 rule-providers:
+  ABPindo:
+    type: http
+    behavior: domain
+    format: text
+    path: "./rule_provider/ABPindo.txt"
+    url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/ABPindo.txt
+    interval: 86400
+
+  oisd_nsfw🔞:
+    type: http
+    behavior: domain
+    format: text
+    path: "./rule_provider/oisd_nsfw.txt"
+    url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_nsfw.txt
+    interval: 86400
+
+  oisd_big:
+    type: http
+    behavior: domain
+    format: text
+    path: "./rule_provider/oisd_big.txt"
+    url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_big.txt
+    interval: 86400
+
   rule_adblock:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
@@ -210,24 +234,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
     behavior: domain
     path: ./rule_provider/18+.yaml
-
-  rule_malware:
-    type: http
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/malware.txt
-    behavior: domain
-    path: ./rule_provider/malware.yaml
-
-  rule_gambling:
-    type: http
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/releas/gambling.txt
-    behavior: domain
-    path: ./rule_provider/gambling.yaml
-
-  rule_tracker:
-    type: http
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/privac.txt
-    behavior: domain
-    path: ./rule_provider/tracker.yaml
+    
 
 tun:
   enable: true
@@ -235,12 +242,12 @@ tun:
     - any:53
 
 rules:
+  - RULE-SET,ABPindo,ADBLOCK+
+  - RULE-SET,oisd_nsfw🔞,ADBLOCK+
+  - RULE-SET,oisd_big,ADBLOCK+
   # === FAMILY SAFE FILTER ===
   - RULE-SET,rule_18+,ADBLOCK+
   - RULE-SET,rule_haram,ADBLOCK+
-  - RULE-SET,rule_gambling,ADBLOCK+
-  - RULE-SET,rule_malware,ADBLOCK+
-  - RULE-SET,rule_tracker,ADBLOCK+
   - RULE-SET,rule_adblock,ADBLOCK+
   
   # ====== to do =======
