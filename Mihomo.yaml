@@ -8,6 +8,31 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - BEST-PING
+      - FALLBACK
+      - LB
+    use:
+      - SERVER
+    
+  - name: UMUM
+    type: select
+    proxies:
+      - MANUAL
+      - BEST-PING
+      - FALLBACK
+      - LB
+    use:
+      - SERVER
+    
+  - name: FINAL
+    type: select
+    proxies:
+      - UMUM
+      - DIRECT
+      
   - name: ADBLOCK+
     type: select
     proxies:
@@ -37,33 +62,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     
-  - name: MANUAL
-    type: select
-    proxies:
-      - BEST-PING
-      - FALLBACK
-      - LB
-      - DIRECT
-    use:
-      - SERVER
-    
-  - name: UMUM
-    type: select
-    proxies:
-      - MANUAL
-      - BEST-PING
-      - FALLBACK
-      - LB
-    use:
-      - SERVER
-    
-  - name: FINAL
-    type: select
-    proxies:
-      - UMUM
-      - DIRECT
-
-port: 7890
+port: 7893
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7890
@@ -73,7 +72,7 @@ mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: "123456"
+secret: ""
 bind-address: "*"
 unified-delay: true
 
@@ -212,13 +211,43 @@ rule-providers:
     behavior: domain
     path: ./rule_provider/18+.yaml
 
+  rule_malware:
+    type: http
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/malware.txt
+    behavior: domain
+    path: ./rule_provider/malware.yaml
+
+  rule_gambling:
+    type: http
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/releas/gambling.txt
+    behavior: domain
+    path: ./rule_provider/gambling.yaml
+
+  rule_tracker:
+    type: http
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/privac.txt
+    behavior: domain
+    path: ./rule_provider/tracker.yaml
+
 tun:
   enable: true
   dns-hijack:
     - any:53
 
 rules:
+  # === FAMILY SAFE FILTER ===
   - RULE-SET,rule_18+,ADBLOCK+
-  - RULE-SET,rule_adblock,ADBLOCK+
   - RULE-SET,rule_haram,ADBLOCK+
+  - RULE-SET,rule_gambling,ADBLOCK+
+  - RULE-SET,rule_malware,ADBLOCK+
+  - RULE-SET,rule_tracker,ADBLOCK+
+  - RULE-SET,rule_adblock,ADBLOCK+
+  
+  # ====== to do =======
+  
+# - DOMAIN-KEYWORD,tiktok,ADBLOCK+
+# - DOMAIN-KEYWORD,bigo,ADBLOCK+
+# - DOMAIN-KEYWORD,live,ADBLOCK+
+
+  # === FINAL ROUTING ===
   - MATCH,FINAL
