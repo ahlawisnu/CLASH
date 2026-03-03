@@ -189,49 +189,56 @@ dns:
     - "*.ffxiv.com"
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
-
+    
 rule-providers:
   ABPindo:
     type: http
     behavior: domain
     format: text
-    path: "./rule_provider/ABPindo.txt"
+    path: ./rule_provider/ABPindo.txt
     url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/ABPindo.txt
     interval: 86400
-
   oisd_nsfw🔞:
     type: http
     behavior: domain
     format: text
-    path: "./rule_provider/oisd_nsfw.txt"
+    path: ./rule_provider/oisd_nsfw.txt
     url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_nsfw.txt
     interval: 86400
-
   oisd_big:
     type: http
     behavior: domain
     format: text
-    path: "./rule_provider/oisd_big.txt"
+    path: ./rule_provider/oisd_big.txt
     url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_big.txt
     interval: 86400
-
+  rule_adblock:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
+    behavior: classical
+    path: ./rule_provider/adblock.yaml
+  rule_haram:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/haram.yaml
+    behavior: domain
+    path: ./rule_provider/haram.yaml
+  rule_18+:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
+    behavior: domain
+    path: ./rule_provider/18+.yaml
+    
 tun:
   enable: true
   dns-hijack:
-    - any:53
-    - tls://any:53
-
-rules:
-  ## Adblock 
-  - RULE-SET,ABPindo,ADBLOCK+
-  - RULE-SET,oisd_nsfw🔞,ADBLOCK+
-  - RULE-SET,oisd_big,ADBLOCK+
-  # === FAMILY SAFE FILTER ===
+  - any:53
+  - tls://any:53
   
-  # ====== to do =======
- # - DOMAIN-KEYWORD,tiktok,ADBLOCK+
- # - DOMAIN-KEYWORD,bigo,ADBLOCK+
- # - DOMAIN-KEYWORD,live,ADBLOCK+
-
-  # === FINAL ROUTING ===
-  - MATCH,FINAL
+rules:
+- RULE-SET,ABPindo,ADBLOCK+
+- RULE-SET,oisd_nsfw🔞,ADBLOCK+
+- RULE-SET,oisd_big,ADBLOCK+
+- RULE-SET,rule_18+,ADBLOCK+
+- RULE-SET,rule_haram,ADBLOCK+
+- RULE-SET,rule_adblock,ADBLOCK+
+- MATCH,FINAL
