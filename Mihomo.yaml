@@ -215,44 +215,23 @@ rule-providers:
     url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_big.txt
     interval: 86400
 
-  rule_adblock:
-    type: http
-    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
-    behavior: classical
-    path: ./rule_provider/adblock.yaml
-
-  rule_haram:
-    type: http
-    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/haram.yaml
-    behavior: domain
-    path: ./rule_provider/haram.yaml
-
-  rule_18+:
-    type: http
-    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
-    behavior: domain
-    path: ./rule_provider/18+.yaml
-    
-
 tun:
   enable: true
   dns-hijack:
     - any:53
+    - tls://any:53
 
 rules:
+  ## Adblock 
   - RULE-SET,ABPindo,ADBLOCK+
   - RULE-SET,oisd_nsfw🔞,ADBLOCK+
   - RULE-SET,oisd_big,ADBLOCK+
   # === FAMILY SAFE FILTER ===
-  - RULE-SET,rule_18+,ADBLOCK+
-  - RULE-SET,rule_haram,ADBLOCK+
-  - RULE-SET,rule_adblock,ADBLOCK+
   
   # ====== to do =======
-  
-# - DOMAIN-KEYWORD,tiktok,ADBLOCK+
-# - DOMAIN-KEYWORD,bigo,ADBLOCK+
-# - DOMAIN-KEYWORD,live,ADBLOCK+
+ # - DOMAIN-KEYWORD,tiktok,ADBLOCK+
+ # - DOMAIN-KEYWORD,bigo,ADBLOCK+
+ # - DOMAIN-KEYWORD,live,ADBLOCK+
 
   # === FINAL ROUTING ===
   - MATCH,FINAL
