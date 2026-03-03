@@ -8,37 +8,6 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - name: MANUAL
-    type: select
-    proxies:
-      - BEST-PING
-      - FALLBACK
-      - LB
-    use:
-      - SERVER
-    
-  - name: UMUM
-    type: select
-    proxies:
-      - MANUAL
-      - BEST-PING
-      - FALLBACK
-      - LB
-    use:
-      - SERVER
-    
-  - name: FINAL
-    type: select
-    proxies:
-      - UMUM
-      - DIRECT
-      
-  - name: ADBLOCK+
-    type: select
-    proxies:
-      - REJECT
-      - FALLBACK
-
   - name: FALLBACK
     type: fallback
     use:
@@ -61,7 +30,36 @@ proxy-groups:
       - SERVER
     url: http://www.gstatic.com/generate_204
     interval: 300
+
+  - name: MANUAL
+    type: select
+    proxies:
+      - BEST-PING
+      - FALLBACK
+      - LB
+    use:
+      - SERVER
     
+  - name: UMUM
+    type: select
+    proxies:
+      - MANUAL
+      - BEST-PING
+      - FALLBACK
+      - LB
+    
+  - name: FINAL
+    type: select
+    proxies:
+      - UMUM
+      - DIRECT
+      
+  - name: ADBLOCK+
+    type: select
+    proxies:
+      - REJECT
+      - FALLBACK
+
 port: 7893
 socks-port: 7891
 redir-port: 7892
