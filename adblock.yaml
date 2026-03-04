@@ -1,7 +1,8 @@
 payload:
 # by > RZP
 # > Google Ads
-#  - DOMAIN-SUFFIX,pagead2.googlesyndication.com
+#  
+  - DOMAIN-SUFFIX,pagead2.googlesyndication.com
   - DOMAIN-SUFFIX,ads.google.com
   - DOMAIN-SUFFIX,adservice.google.com
   - DOMAIN-SUFFIX,googleadservices.com
@@ -151,9 +152,12 @@ payload:
   
 # > Stats WP Plugin
   - DOMAIN-SUFFIX,stats.wp.com
+  - DOMAIN-SUFFIX,ads30.adcolony.com
+  - DOMAIN-SUFFIX,adc3-launch.adcolony.com
+  - DOMAIN-SUFFIX,wd.adcolony.com
 
 # > # > Error Trackers ====================
-
+  - DOMAIN-SUFFIX,
 # > Bugsnag
   - DOMAIN-SUFFIX,notify.bugsnag.com
   - DOMAIN-SUFFIX,sessions.bugsnag.com
@@ -568,4 +572,5 @@ payload:
   - DOMAIN-SUFFIX,youporn.com
   - DOMAIN-SUFFIX,cdn77.scoreuniverse.com
   - DOMAIN-SUFFIX,widgets.stripst.com
+
 
