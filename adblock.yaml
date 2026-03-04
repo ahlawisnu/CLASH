@@ -30,9 +30,6 @@ payload:
   - DOMAIN-SUFFIX,amazonaax.com
   - DOMAIN-SUFFIX,amazonclix.com
   - DOMAIN-SUFFIX,assoc-amazon.com
-
-# > # > Analytics ====================
-  - DOMAIN-SUFFIX,com
   
 
 # > Yahooh 
@@ -785,6 +782,7 @@ payload:
   - DOMAIN-SUFFIX,books-analytics-events.apple.com
   - DOMAIN-SUFFIX,weather-analytics-events.apple.com
   - DOMAIN-SUFFIX,notes-analytics-events.apple.
+
 
 
 
