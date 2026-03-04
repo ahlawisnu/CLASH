@@ -6,8 +6,8 @@ payload:
   - DOMAIN-SUFFIX,ads.google.com
   - DOMAIN-SUFFIX,adservice.google.com
   - DOMAIN-SUFFIX,googleadservices.com
-  - DOMAIN-SUFIX,afs.googlesyndication.com
-  - DOMAIN-SUFIX,analytics.google.com
+  - DOMAIN-SUFFIX,afs.googlesyndication.com
+  - DOMAIN-SUFFIX,analytics.google.com
   
 
 # > Media.net
@@ -32,7 +32,7 @@ payload:
   - DOMAIN-SUFFIX,assoc-amazon.com
 
 # > # > Analytics ====================
-  - DOMAIN-SUFIX,com
+  - DOMAIN-SUFFIX,com
   
 
 # > Yahooh 
@@ -200,16 +200,16 @@ payload:
   - DOMAIN-SUFFIX,rereddit.com
   - DOMAIN-SUFFIX,events.redditmedia.com
   - DOMAIN-SUFFIX,d.reddit.com
-  - DOMAIN-SUFIX,events.reddit.com
+  - DOMAIN-SUFFIX,events.reddit.com
 
 # > TikTok
   - DOMAIN-SUFFIX,ads-sg.tiktok.com
   - DOMAIN-SUFFIX,analytics-sg.tiktok.com
   - DOMAIN-SUFFIX,ads.tiktok.com
   - DOMAIN-SUFFIX,analytics.tiktok.com
-  - DOMAIN-SUFIX,ads-api.tiktok.com
-  - DOMAIN-SUFIX,business-api.tiktok.com
-  - DOMAIN-SUFIX,log.byteoversea.com
+  - DOMAIN-SUFFIX,ads-api.tiktok.com
+  - DOMAIN-SUFFIX,business-api.tiktok.com
+  - DOMAIN-SUFFIX,log.byteoversea.com
   
 
 # > YouTube
@@ -218,22 +218,22 @@ payload:
 
 # > # > Mix ====================
 # > UNITY
-  - DOMAIN-SUFIX,auction.unityads.unity3d.com
-  - DOMAIN-SUFIX,config.unityads.unity3d.com
+  - DOMAIN-SUFFIX,auction.unityads.unity3d.com
+  - DOMAIN-SUFFIX,config.unityads.unity3d.com
 # >  Yahoo
-  - DOMAIN-SUFIX,udcm.yahoo.com
-  - DOMAIN-SUFIX,adtech.yahooinc.com
+  - DOMAIN-SUFFIX,udcm.yahoo.com
+  - DOMAIN-SUFFIX,adtech.yahooinc.com
 # >  Yandex
-  - DOMAIN-SUFIX,appmetrica.yandex.ru
-  - DOMAIN-SUFIX,adfstat.yandex.ru
-  - DOMAIN-SUFIX,adfstat.yandex.ru
+  - DOMAIN-SUFFIX,appmetrica.yandex.ru
+  - DOMAIN-SUFFIX,adfstat.yandex.ru
+  - DOMAIN-SUFFIX,adfstat.yandex.ru
   
 # > # > OEM ====================
 
 # > Realme
   - DOMAIN-SUFFIX,bdapi-in-ads.realmemobile.com
-  - DOMAIN-SUFIX,iot-eu-logser.realme.com
-  - DOMAIN-SUFIX,iot-logser.realme.com
+  - DOMAIN-SUFFIX,iot-eu-logser.realme.com
+  - DOMAIN-SUFFIX,iot-logser.realme.com
 
 # > OPPO
   - DOMAIN-SUFFIX,adsfs.oppomobile.com
@@ -292,13 +292,13 @@ payload:
 
 # > Apple
   - DOMAIN-SUFFIX,metrics.apple.com
-  - DOMAIN-SUFIX,iadsdk.apple.com
-  - DOMAIN-SUFIX,api-adservices.apple.com
+  - DOMAIN-SUFFIX,iadsdk.apple.com
+  - DOMAIN-SUFFIX,api-adservices.apple.com
   - DOMAIN-SUFFIX,securemetrics.apple.com
   - DOMAIN-SUFFIX,weather-analytics-events.apple.com
   - DOMAIN-SUFFIX,supportmetrics.apple.com
   - DOMAIN-SUFFIX,metrics.icloud.com
-  - DOMAIN-SUFIX,notes-analytics-events.apple.com
+  - DOMAIN-SUFFIX,notes-analytics-events.apple.com
   - DOMAIN-SUFFIX,metrics.mzstatic.com
   - DOMAIN-SUFFIX,dzc-metrics.mzstatic.com
   - DOMAIN-SUFFIX,books-analytics-events.news.apple-dns.net
@@ -792,4 +792,5 @@ payload:
   - DOMAIN-SUFFIX,books-analytics-events.apple.com
   - DOMAIN-SUFFIX,weather-analytics-events.apple.com
   - DOMAIN-SUFFIX,notes-analytics-events.apple.
+
 
