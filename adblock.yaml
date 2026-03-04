@@ -34,7 +34,7 @@ payload:
 
 # > Yahooh 
   - DOMAIN-SUFFIX,ads.yahoo.com
-  - DOMAIN,SUFFIX,udc.yahoo.com
+  - DOMAIN-SUFFIX,udc.yahoo.com
   - DOMAIN-SUFFIX,adserver.yahoo.com
   - DOMAIN-SUFFIX,adspecs.yahoo.com
   - DOMAIN-SUFFIX,advertising.yahoo.com
@@ -783,6 +783,7 @@ payload:
   - DOMAIN-SUFFIX,books-analytics-events.apple.com
   - DOMAIN-SUFFIX,weather-analytics-events.apple.com
   - DOMAIN-SUFFIX,notes-analytics-events.apple.
+
 
 
 
