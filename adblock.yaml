@@ -156,6 +156,7 @@ payload:
   - DOMAIN-SUFFIX,ads30.adcolony.com
   - DOMAIN-SUFFIX,adc3-launch.adcolony.com
   - DOMAIN-SUFFIX,wd.adcolony.com
+  - DOMAIN-SUFFIX,events3alt.adcolony.com
 
 # > # > Error Trackers ====================
   - DOMAIN-SUFFIX,
@@ -573,6 +574,7 @@ payload:
   - DOMAIN-SUFFIX,youporn.com
   - DOMAIN-SUFFIX,cdn77.scoreuniverse.com
   - DOMAIN-SUFFIX,widgets.stripst.com
+
 
 
 
