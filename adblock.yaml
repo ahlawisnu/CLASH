@@ -158,8 +158,7 @@ payload:
   - DOMAIN-SUFFIX,wd.adcolony.com
   - DOMAIN-SUFFIX,events3alt.adcolony.com
 
-# > # > Error Trackers ====================
-  - DOMAIN-SUFFIX,
+# > # > Error tracker
 # > Bugsnag
   - DOMAIN-SUFFIX,notify.bugsnag.com
   - DOMAIN-SUFFIX,sessions.bugsnag.com
@@ -574,6 +573,7 @@ payload:
   - DOMAIN-SUFFIX,youporn.com
   - DOMAIN-SUFFIX,cdn77.scoreuniverse.com
   - DOMAIN-SUFFIX,widgets.stripst.com
+
 
 
 
