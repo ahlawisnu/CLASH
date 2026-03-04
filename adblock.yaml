@@ -5,6 +5,9 @@ payload:
   - DOMAIN-SUFFIX,ads.google.com
   - DOMAIN-SUFFIX,adservice.google.com
   - DOMAIN-SUFFIX,googleadservices.com
+  - DOMAIN-SUFIX,afs.googlesyndication.com
+  - DOMAIN-SUFIX,analytics.google.com
+  
 
 # > Media.net
   - DOMAIN-SUFFIX,media.net
@@ -27,6 +30,9 @@ payload:
   - DOMAIN-SUFFIX,assoc-amazon.com
 
 # > # > Analytics ====================
+  - DOMAIN-SUFIX,click.googleanalytics.com
+  
+
 # > Yahoo
   - DOMAIN-SUFFIX,ads.yahoo.com
   - DOMAIN-SUFFIX,adserver.yahoo.com
@@ -189,26 +195,40 @@ payload:
   - DOMAIN-SUFFIX,rereddit.com
   - DOMAIN-SUFFIX,events.redditmedia.com
   - DOMAIN-SUFFIX,d.reddit.com
+  - DOMAIN-SUFIX,events.reddit.com
 
 # > TikTok
   - DOMAIN-SUFFIX,ads-sg.tiktok.com
   - DOMAIN-SUFFIX,analytics-sg.tiktok.com
   - DOMAIN-SUFFIX,ads.tiktok.com
   - DOMAIN-SUFFIX,analytics.tiktok.com
+  - DOMAIN-SUFIX,ads-api.tiktok.com
+  - DOMAIN-SUFIX,business-api.tiktok.com
+  - DOMAIN-SUFIX,log.byteoversea.com
+  
 
 # > YouTube
   - DOMAIN-SUFFIX,ads.youtube.com
   - DOMAIN-SUFFIX,youtube.cleverads.vn
 
 # > # > Mix ====================
+# > UNITY
+  - DOMAIN-SUFIX,auction.unityads.unity3d.com
+  - DOMAIN-SUFIX,config.unityads.unity3d.com
 # >  Yahoo
-
+  - DOMAIN-SUFIX,udcm.yahoo.com
+  - DOMAIN-SUFIX,adtech.yahooinc.com
 # >  Yandex
-
+  - DOMAIN-SUFIX,appmetrica.yandex.ru
+  - DOMAIN-SUFIX,adfstat.yandex.ru
+  - DOMAIN-SUFIX,adfstat.yandex.ru
+  
 # > # > OEM ====================
 
 # > Realme
   - DOMAIN-SUFFIX,bdapi-in-ads.realmemobile.com
+  - DOMAIN-SUFIX,iot-eu-logser.realme.com
+  - DOMAIN-SUFIX,iot-logser.realme.com
 
 # > OPPO
   - DOMAIN-SUFFIX,adsfs.oppomobile.com
@@ -243,6 +263,7 @@ payload:
 
 # > Huawei
   - DOMAIN-SUFFIX,metrics.data.hicloud.com
+  - DOMAIN-SUFFIX,grs.hicloud.com
   - DOMAIN-SUFFIX,metrics1.data.hicloud.com
   - DOMAIN-SUFFIX,metrics2.data.hicloud.com
   - DOMAIN-SUFFIX,metrics3.data.hicloud.com
@@ -266,9 +287,13 @@ payload:
 
 # > Apple
   - DOMAIN-SUFFIX,metrics.apple.com
+  - DOMAIN-SUFIX,iadsdk.apple.com
+  - DOMAIN-SUFIX,api-adservices.apple.com
   - DOMAIN-SUFFIX,securemetrics.apple.com
+  - DOMAIN-SUFFIX,weather-analytics-events.apple.com
   - DOMAIN-SUFFIX,supportmetrics.apple.com
   - DOMAIN-SUFFIX,metrics.icloud.com
+  - DOMAIN-SUFIX,notes-analytics-events.apple.com
   - DOMAIN-SUFFIX,metrics.mzstatic.com
   - DOMAIN-SUFFIX,dzc-metrics.mzstatic.com
   - DOMAIN-SUFFIX,books-analytics-events.news.apple-dns.net
@@ -543,3 +568,4 @@ payload:
   - DOMAIN-SUFFIX,youporn.com
   - DOMAIN-SUFFIX,cdn77.scoreuniverse.com
   - DOMAIN-SUFFIX,widgets.stripst.com
+
