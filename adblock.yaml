@@ -35,7 +35,7 @@ payload:
   - DOMAIN-SUFIX,com
   
 
-# > Yahoohttps://raw.githubusercontent.com/4rukadi/asset/refs/heads/main/adblock-host
+# > Yahooh 
   - DOMAIN-SUFFIX,ads.yahoo.com
   - DOMAIN-SUFFIX,adserver.yahoo.com
   - DOMAIN-SUFFIX,adspecs.yahoo.com
@@ -792,3 +792,4 @@ payload:
   - DOMAIN-SUFFIX,books-analytics-events.apple.com
   - DOMAIN-SUFFIX,weather-analytics-events.apple.com
   - DOMAIN-SUFFIX,notes-analytics-events.apple.
+
