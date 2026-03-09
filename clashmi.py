@@ -25,6 +25,42 @@ class ClashConfigGenerator:
       interval: 300
 
 proxy-groups:
+  - name: FINAL
+    type: select
+    proxies:
+      - UMUM
+      - BEST-PING
+      - FALLBACK
+      - LB
+      - LB 2
+      - DIRECT
+      
+  - name: ADBLOCK+
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - LB
+      
+  - name: MANUAL
+    type: select
+    proxies:
+      - BEST-PING
+      - FALLBACK
+      - LB
+      - LB 2
+    use:
+      - SERVER
+
+  - name: UMUM
+    type: select
+    proxies:
+      - MANUAL
+      - BEST-PING
+      - FALLBACK
+      - LB
+      - LB 2
+
   - name: FALLBACK
     type: fallback
     use:
@@ -47,36 +83,15 @@ proxy-groups:
       - SERVER
     url: http://www.gstatic.com/generate_204
     interval: 300
-    
-  - name: ADBLOCK+
-    type: select
-    proxies:
-      - REJECT
-      - FALLBACK
 
-  - name: MANUAL
-    type: select
-    proxies:
-      - BEST-PING
-      - FALLBACK
-      - LB
+  - name: LB 2
+    type: load-balance
+    strategy: consistent-hashing
     use:
       - SERVER
-    
-  - name: UMUM
-    type: select
-    proxies:
-      - MANUAL
-      - BEST-PING
-      - FALLBACK
-      - LB
-    
-  - name: FINAL
-    type: select
-    proxies:
-      - UMUM
-      - DIRECT
-      
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
 port: 7893
 socks-port: 7891
 redir-port: 7892
@@ -212,32 +227,43 @@ rule-providers:
     type: http
     behavior: domain
     format: text
-    path: "./rule_provider/ABPindo.txt"
-    url: https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/subscriptions/abpindo.txt
+    path: ./rule_provider/ABPindo.txt
+    url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/ABPindo.txt
     interval: 86400
 
   oisd_nsfw🔞:
     type: http
     behavior: domain
     format: text
-    path: "./rule_provider/oisd_nsfw.txt"
-    url: https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/abp_nsfw.txt
+    path: ./rule_provider/oisd_nsfw.txt
+    url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_nsfw.txt
     interval: 86400
 
   oisd_big:
     type: http
     behavior: domain
     format: text
-    path: "./rule_provider/oisd_big.txt"
-    url: https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt
+    path: ./rule_provider/oisd_big.txt
+    url: https://raw.githubusercontent.com/zzzt27/clash-AdsBlock/main/oisd_big.txt
     interval: 86400
 
   rule_adblock:
     type: http
     url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/adblock.yaml
     behavior: classical
-    interval: 86400
+    path: ./rule_provider/adblock.yaml
 
+  rule_haram:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/haram.yaml
+    behavior: domain
+    path: ./rule_provider/haram.yaml
+
+  rule_18+:
+    type: http
+    url: https://raw.githubusercontent.com/ahlawisnu/CLASH/refs/heads/main/18+.yaml
+    behavior: domain
+    path: ./rule_provider/18+.yaml
 
 tun:
   enable: true
@@ -249,6 +275,8 @@ rules:
   - RULE-SET,oisd_nsfw🔞,ADBLOCK+
   - RULE-SET,oisd_big,ADBLOCK+
   - RULE-SET,rule_adblock,ADBLOCK+
+  - RULE-SET,rule_haram,ADBLOCK+
+  - RULE-SET,rule_18+,ADBLOCK+
   # === FAMILY SAFE FILTER ===
 
   # ====== to do =======
